@@ -1,6 +1,6 @@
 Name:		texlive-oplotsymbl
 Version:	44951
-Release:	1
+Release:	2
 Summary:	Some symbols which are not easily available
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/oplotsymbl
