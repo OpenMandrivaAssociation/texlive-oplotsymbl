@@ -3,7 +3,7 @@ Version:	44951
 Release:	2
 Summary:	Some symbols which are not easily available
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/oplotsymbl
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/oplotsymbl
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.doc.r%{version}.tar.xz
