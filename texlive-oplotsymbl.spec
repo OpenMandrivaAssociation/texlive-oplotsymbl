@@ -1,38 +1,23 @@
-Name:		texlive-oplotsymbl
-Version:	44951
-Release:	2
+%global tl_name oplotsymbl
+%global tl_revision 44951
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.4
+Release:	%{tl_revision}.1
 Summary:	Some symbols which are not easily available
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/oplotsymbl
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/oplotsymbl.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package is named oPlotSymbl and it includes symbols, which
-are not easily available. Especially, these symbols are used in
-scientific plots, but the potential user is allowed to use them
-in other ways. This package uses TikZ and xcolor.
+This package is named oPlotSymbl and it includes symbols, which are not
+easily available. Especially, these symbols are used in scientific
+plots, but the potential user is allowed to use them in other ways. This
+package uses TikZ and xcolor.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/oplotsymbl
-%doc %{_texmfdistdir}/doc/latex/oplotsymbl
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
